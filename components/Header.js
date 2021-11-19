@@ -13,6 +13,7 @@ import {
   SearchIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
+import HeaderIcon from "./HeaderIcon";
 function Header() {
   return (
     <div>
