@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { signIn } from "next-auth/client";
 
 function Login() {
   return (
@@ -10,6 +11,7 @@ function Login() {
         objectFit="contain"
       />
       <h1
+        onClick={signIn}
         className="p-5 m-20 bg-blue-500 rounded-full text-white
           text-center cursor-pointer"
       >
