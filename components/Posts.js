@@ -1,4 +1,5 @@
 import { useCollection } from "react-firebase-hooks/firestore";
+import { db } from "../firebase";
 import Post from "./Post";
 function Posts({ posts }) {
   const [realtimePosts, loading, error] = useCollection(
@@ -19,7 +20,7 @@ function Posts({ posts }) {
               postImage={post.data().postImage}
             />;
           })
-        : posts.map((posts) => (
+        : posts.map((post) => (
             <Post
               key={post.id}
               name={post.name}

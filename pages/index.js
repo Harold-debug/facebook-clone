@@ -8,7 +8,7 @@ import Widgets from "../components/Widgets";
 import { db } from "../firebase";
 
 export default function Home({ session, posts }) {
-  // if (!session) return <Login />;
+  if (!session) return <Login />;
 
   return (
     <div className="h-screen bg-gray-100 overflow-hidden">
@@ -29,15 +29,15 @@ export default function Home({ session, posts }) {
   );
 }
 
-// export async function getServerSideProps(context) {
-//   const session = await getSession(context);
-// const posts = await db.collection("posts").orderBy("timstamp", "desc").get();
-// const docs = posts.docs.map((post) => ({
-//   id: post.id,
-//   ...post.data(),
-//   timestamps: null,
-// }));
-//   return {
-//     props: { session, posts: docs, },
-//   };
-// }
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  const posts = await db.collection("posts").orderBy("timstamp", "desc").get();
+  const docs = posts.docs.map((post) => ({
+    id: post.id,
+    ...post.data(),
+    timestamps: null,
+  }));
+  return {
+    props: { session, posts: docs },
+  };
+}

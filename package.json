@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "HTTPS=true SSL_CRT_FILE=C:/Users/geumt/localhost.pem SSL_KEY_FILE=C:/Users/geumt/localhost-key.pem next start"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
