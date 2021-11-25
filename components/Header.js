@@ -54,16 +54,17 @@ function Header() {
       <div className="flex items-center sm:space-x-2 justify-end">
         {/* profile pic */}
 
-        <Image
+        {/* <Image
           onClick={signOut}
           className="rounded-full cursor-pointer"
-          src={session.user.image}
-          width="40"
-          height="40"
+          src={}
+          // // src={session.user.image}
+          // width="40"
+          // height="40"
           layout="fixed"
-        />
+        /> */}
         <p className="whitespace-nowrap font-semibold pr-3">
-          {session.user.name}
+          {/* {session.user.name} */}
         </p>
         <ViewGridIcon className="icon" />
         <ChatIcon className="icon" />
